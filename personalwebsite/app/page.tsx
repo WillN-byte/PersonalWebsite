@@ -74,7 +74,7 @@ export default function Portfolio() {
               <div className="w-full sm:w-1/2">
                 <ImageCarousel />
               </div>
-              <div className="w-full sm:w-1/2 p-6">
+              <div className="w-full sm:w-1/2 p-6 flex flex-col items-center">
                 <h2 className="text-3xl font-bold mb-4">About Me</h2>
                 <p className="text-xl text-muted-foreground mb-4">
                   Passionate developer with a focus on cybersecurity, DevOps,
@@ -147,62 +147,61 @@ export default function Portfolio() {
       {/* Skills Section */}
       <section className="container mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold mb-12 text-center">Skills</h2>
-        <div className="flex flex-wrap justify-center gap-2">
-          {[
-            "Java",
-            "Python",
-            "C/C++",
-            "C#",
-            "JavaScript",
-            "SQL",
-            "HTML",
-            "CSS",
-            "Node.js",
-            "AWS",
-            "Azure",
-            "Supabase",
-            "PyTorch",
-            "TensorFlow",
-            "DevOps",
-            "QA",
-            "Unity",
-            "GitHub",
-            "Git",
-            "Docker",
-            "CI/CD",
-          ].map((skill) => (
-            <Badge key={skill} variant="secondary" className="text-sm">
-              {skill}
-            </Badge>
-          ))}
-        </div>
-      </section>
 
-      {/* Education Section */}
-      <section className="container mx-auto px-4 py-20">
-        <Card>
-          <CardHeader>
-            <CardTitle>Education</CardTitle>
-            <CardDescription>San Jose State University</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="font-medium">
-              Bachelor of Science in Computer Science
-            </p>
-            <p className="text-muted-foreground">
-              GPA: 3.96 | Expected Graduation: Dec 2025
-            </p>
-            <div className="mt-4">
-              <p className="font-medium">Achievements:</p>
-              <ul className="list-disc list-inside text-muted-foreground">
-                <li>President's Scholar (6 times)</li>
-                <li>Software & Computer Engineering Society Member</li>
-                <li>Virtual/Augmented Reality Club Member</li>
-                <li>Eagle Scout</li>
-              </ul>
+        <div className="flex flex-wrap justify-center gap-6">
+          {/* Languages */}
+          <div className="w-full mb-6 flex justify-between">
+            <h3 className="text-xl font-semibold mb-4">Languages</h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                "Java",
+                "Python",
+                "C/C++",
+                "C#",
+                "JavaScript",
+                "SQL",
+                "HTML",
+                "CSS",
+              ].map((skill) => (
+                <Badge key={skill} variant="secondary" className="text-sm">
+                  {skill}
+                </Badge>
+              ))}
             </div>
-          </CardContent>
-        </Card>
+          </div>
+
+          {/* Tools */}
+          <div className="w-full mb-6 flex justify-between">
+            <h3 className="text-xl font-semibold mb-4">Tools</h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                "GitHub",
+                "Git",
+                "Docker",
+                "CI/CD",
+                "AWS",
+                "Azure",
+                "Supabase",
+              ].map((skill) => (
+                <Badge key={skill} variant="secondary" className="text-sm">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+
+          {/* Frameworks */}
+          <div className="w-full mb-6 flex justify-between">
+            <h3 className="text-xl font-semibold mb-4">Frameworks</h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {["PyTorch", "TensorFlow", "Unity", "DevOps"].map((skill) => (
+                <Badge key={skill} variant="secondary" className="text-sm">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

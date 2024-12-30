@@ -56,7 +56,7 @@ const timelineData: TimelineItem[] = [
   {
     title: "Bachelor of Science in Computer Science",
     organization: "San Jose State University",
-    date: "Aug. 2021 - Dec 2025",
+    date: "Aug. 2021 - May 2025",
     description: [
       "GPA: 3.96",
       "President's Scholar (6 times)",
@@ -73,7 +73,9 @@ export function ExperienceTimeline() {
       {timelineData.map((item, index) => (
         <div
           key={index}
-          className={`mb-8 flex justify-${index % 2 === 0 ? "start" : "end"}`}
+          className={`mb-8 flex ${
+            index % 2 === 0 ? "justify-start" : "justify-end"
+          }`}
         >
           <div className="relative w-full md:w-1/2 px-4">
             <Card className="relative">

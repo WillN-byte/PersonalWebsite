@@ -9,16 +9,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-
+import test from "../images/test.png";
 const images = [
-  "/placeholder.svg?height=400&width=600",
+  test,
   "/placeholder.svg?height=400&width=600",
   "/placeholder.svg?height=400&width=600",
 ];
 
 export function ImageCarousel() {
   return (
-    <Carousel className="w-full">
+    <Carousel className="relative w-full">
       <CarouselContent>
         {images.map((src, index) => (
           <CarouselItem key={index}>
@@ -33,8 +33,8 @@ export function ImageCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-200" />
+      <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-200" />
     </Carousel>
   );
 }
