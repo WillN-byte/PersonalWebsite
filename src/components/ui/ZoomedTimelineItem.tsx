@@ -29,7 +29,7 @@ const ZoomedTimelineItem: React.FC<ZoomedTimelineItemProps> = ({
       exit={{ opacity: 0 }}
       className='fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4'
     >
-      <Card className='w-full max-w-4xl max-h-[90vh] overflow-y-auto'>
+      <Card className='w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-black'>
         <CardHeader className='relative'>
           <CardTitle className='text-3xl'>{data.title}</CardTitle>
           <Button

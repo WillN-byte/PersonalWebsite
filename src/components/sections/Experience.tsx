@@ -4,29 +4,15 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TimelineCard from '@/components/ui/TimelineCard';
 import ZoomedTimelineItem from '@/components/ui/ZoomedTimelineItem';
-import { Button } from '@/components/ui/Button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-
 import logo from '@/assets/thesunrisestate_logo.jpg';
 
 const timelineData = [
-  {
-    title: 'Software Engineer Intern',
-    company: 'The Sunrise State',
-    period: 'Oct. 2024 – Present',
-    location: 'Remote',
-    image: '@/assets/thesunrisestate_logo.jpg',
-    accomplishments: [
-      'Set up scalable, secure cloud infrastructure for content-management system on Microsoft Azure with CI/CD',
-      'Implemented automated testing, reducing bug reports by 30%',
-    ],
-  },
   {
     title: 'Software Developer',
     company: 'PalAte',
     period: 'Sep. 2023 – Present',
     location: 'San Jose, CA',
-    image: '/placeholder.svg?height=400&width=600',
+    image: '/palate_logo.svg',
     accomplishments: [
       'Engineered a React Native app with 20+ screens and 15+ integrated packages',
       'Implemented advanced bitwise algorithms, reducing runtime by 37%',
@@ -34,11 +20,22 @@ const timelineData = [
     ],
   },
   {
+    title: 'Software Engineer Intern',
+    company: 'The Sunrise State',
+    period: 'Oct. 2024 – Dec 2025',
+    location: 'Remote',
+    image: '/thesunrisestate_logo.svg',
+    accomplishments: [
+      'Set up scalable, secure cloud infrastructure for content-management system on Microsoft Azure with CI/CD',
+      'Implemented automated testing, reducing bug reports by 30%',
+    ],
+  },
+  {
     title: 'Project Developer and Tutor',
     company: 'San Jose State University',
     period: 'Aug. 2022 — Present',
     location: 'San Jose, CA',
-    image: '/placeholder.svg?height=400&width=600',
+    image: '/960x0.webp',
     accomplishments: [
       'Cultivated digital literacy and cybersecurity awareness in 280+ students',
       'Developed comprehensive computer science and information security curriculum',
@@ -49,7 +46,7 @@ const timelineData = [
     company: 'IBM',
     period: 'Jun. 2022 – Aug. 2022',
     location: 'San Jose, CA',
-    image: '/placeholder.svg?height=400&width=600',
+    image: '/ibm.svg',
     accomplishments: [
       'Spearheaded implementation of Agile SDLC methodologies, resulting in a 30% faster product launch cycle',
       'Developed JavaScript application to address local homelessness and unemployment',
@@ -60,7 +57,7 @@ const timelineData = [
     company: 'SJSU Software & Computer Engineering Society',
     period: 'Aug. 2021 – Feb. 2023',
     location: 'San Jose, CA',
-    image: '/placeholder.svg?height=400&width=600',
+    image: '/sce.webp',
     accomplishments: [
       'Documented classification and clustering algorithms in Python',
       'Built a machine learning model using tokenization and BERT embeddings',
@@ -69,18 +66,7 @@ const timelineData = [
 ];
 
 const Experience: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [zoomedIndex, setZoomedIndex] = useState<number | null>(null);
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      Math.min(timelineData.length - 1, prevIndex + 1)
-    );
-  };
 
   const handleZoom = (index: number) => {
     setZoomedIndex(index);
@@ -94,55 +80,17 @@ const Experience: React.FC = () => {
     <section id='experience' className='w-full py-16 relative bg-background'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <h2 className='text-4xl font-bold text-center mb-12'>My Experience</h2>
-        <div className='relative overflow-hidden'>
-          <div className='flex items-center justify-center relative mb-8'>
-            <Button
-              variant='outline'
-              size='icon'
-              onClick={handlePrev}
-              disabled={currentIndex === 0}
-              className='mr-4 z-20 opacity-75 hover:opacity-100 transition-opacity'
-              aria-label='Previous experience'
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-8'>
+          {timelineData.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
             >
-              <ChevronLeft className='h-6 w-6' />
-            </Button>
-            <div className='w-full max-w-4xl relative z-10'>
-              <AnimatePresence mode='wait'>
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <TimelineCard
-                    {...timelineData[currentIndex]}
-                    onZoom={() => handleZoom(currentIndex)}
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-            <Button
-              variant='outline'
-              size='icon'
-              onClick={handleNext}
-              disabled={currentIndex === timelineData.length - 1}
-              className='ml-4 z-20 opacity-75 hover:opacity-100 transition-opacity'
-              aria-label='Next experience'
-            >
-              <ChevronRight className='h-6 w-6' />
-            </Button>
-          </div>
-          <div className='flex justify-center mt-6'>
-            {timelineData.map((_, index) => (
-              <div
-                key={index}
-                className={`w-3 h-3 rounded-full mx-1 ${
-                  index === currentIndex ? 'bg-primary' : 'bg-gray-300'
-                }`}
-              />
-            ))}
-          </div>
+              <TimelineCard {...item} onZoom={() => handleZoom(index)} />
+            </motion.div>
+          ))}
         </div>
       </div>
       <AnimatePresence>

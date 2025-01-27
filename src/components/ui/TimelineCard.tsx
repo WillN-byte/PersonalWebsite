@@ -9,7 +9,7 @@ interface TimelineCardProps {
   company: string;
   period: string;
   location: string;
-  image: string;
+  image?: string;
   accomplishments: string[];
   onZoom: () => void;
 }

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from 'react';
 import {
   randomBetween,
   createStar,
   createShootingStar,
-} from "../utils/spaceUtils";
+} from '../utils/spaceUtils';
 
 const STAR_COUNT = 1000;
 const SHOOTING_STAR_COUNT = 1;
@@ -19,7 +19,7 @@ export default function SpaceBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     canvas.width = window.innerWidth;
@@ -40,7 +40,7 @@ export default function SpaceBackground() {
     }
 
     function animate() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // Updated opacity
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.3)'; // Updated opacity
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Animate stars
@@ -122,14 +122,14 @@ export default function SpaceBackground() {
       );
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
-    <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full" />
+    <canvas ref={canvasRef} className='fixed top-0 left-0 w-full h-full' />
   );
 }
