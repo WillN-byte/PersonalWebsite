@@ -1,16 +1,23 @@
-'use client';
+"use client";
 
-import React, { useRef, useEffect } from 'react';
-import {
-  randomBetween,
-  createStar,
-  createShootingStar,
-} from '../utils/spaceUtils';
+import React, { useRef, useEffect } from "react";
+import { createStar, createShootingStar } from "../utils/spaceUtils";
 
 const STAR_COUNT = 1000;
 const SHOOTING_STAR_COUNT = 1;
 const DEPTH = 1000;
 const TAIL_LENGTH = 75;
+
+interface Star {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  lifespan: number;
+  hue: number;
+  radius: number;
+  tail: { x: number; y: number }[]; // Tail is an array of objects with x and y
+}
 
 export default function SpaceBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -19,7 +26,7 @@ export default function SpaceBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     canvas.width = window.innerWidth;
@@ -33,6 +40,11 @@ export default function SpaceBackground() {
     );
 
     function drawStar(x: number, y: number, size: number, opacity: number) {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
       ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
       ctx.beginPath();
       ctx.arc(x, y, size, 0, Math.PI * 2);
@@ -40,7 +52,12 @@ export default function SpaceBackground() {
     }
 
     function animate() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.3)'; // Updated opacity
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // Updated opacity
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Animate stars
@@ -60,7 +77,8 @@ export default function SpaceBackground() {
       });
 
       // Animate shooting stars
-      shootingStars.forEach((star, index) => {
+      shootingStars.forEach((star: Star, index) => {
+        if (!star) return;
         star.x += star.vx;
         star.y += star.vy;
         star.tail.unshift({ x: star.x, y: star.y });
@@ -122,14 +140,14 @@ export default function SpaceBackground() {
       );
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
-    <canvas ref={canvasRef} className='fixed top-0 left-0 w-full h-full' />
+    <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full" />
   );
 }

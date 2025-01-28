@@ -20,7 +20,7 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
   period,
   location,
   image,
-  accomplishments,
+  //accomplishments,
   onZoom,
 }) => {
   return (

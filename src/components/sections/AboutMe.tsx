@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
+//import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Button } from "../ui/Button";
+//import { Button } from "../ui/Button";
 import { Card, CardContent } from "@/components/ui/Card";
 import {
   ChevronLeft,
@@ -82,17 +82,17 @@ export default function AboutMe() {
           >
             <h2 className="text-3xl font-bold mb-4">About Me</h2>
             <p className="text-lg">
-              Hi there! I'm William Ngo, a passionate computer science graduate
-              with a keen interest in software engineering. My journey in tech
-              began with a curiosity about how things work, which quickly
-              evolved into a love for creating innovative solutions.
+              Hi there! I&apos;m William Ngo, a passionate computer science
+              graduate with a keen interest in software engineering. My journey
+              in tech began with a curiosity about how things work, which
+              quickly evolved into a love for creating innovative solutions.
             </p>
             <p className="text-lg">
               With a strong foundation in various programming languages and a
-              knack for problem-solving, I'm always eager to take on new
+              knack for problem-solving, I&apos;m always eager to take on new
               challenges and learn cutting-edge technologies. My goal is to
-              contribute to projects that make a positive impact on people's
-              lives.
+              contribute to projects that make a positive impact on
+              people&apos;s lives.
             </p>
           </motion.div>
 

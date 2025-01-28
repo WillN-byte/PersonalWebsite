@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import { Github, Linkedin, Mail } from "lucide-react";
+//import Image from "next/image";
+import { Github, Linkedin } from "lucide-react";
 import {
   motion,
   useAnimation,
@@ -51,7 +51,7 @@ const SocialButton = ({
 };
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  //const [_, setMousePosition] = useState({ x: 0, y: 0 });
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   const rotateX = useTransform(cursorY, [0, 300], [15, -15]);
@@ -59,7 +59,7 @@ export default function Hero() {
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      //setMousePosition({ x: e.clientX, y: e.clientY });
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
     };
@@ -91,7 +91,7 @@ export default function Hero() {
               stiffness: 200,
             }}
           >
-            Hi, I'm William Ngo
+            Hi, I&apos;m William Ngo
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl text-primary-foreground mb-8"
