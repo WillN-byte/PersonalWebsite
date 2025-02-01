@@ -1,3 +1,4 @@
+'use client';
 import Layout from '../components/Layout';
 import Hero from '@/components/sections/Hero';
 import AboutMe from '@/components/sections/AboutMe';
