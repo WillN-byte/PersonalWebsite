@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import TimelineCard from "@/components/ui/TimelineCard";
-import ZoomedTimelineItem from "@/components/ui/ZoomedTimelineItem";
+import TimelineCard from "@/app/components/ui/TimelineCard";
+import ZoomedTimelineItem from "@/app/components/ui/ZoomedTimelineItem";
 //import logo from '@/assets/thesunrisestate_logo.jpg';
 
 const timelineData = [

@@ -99,7 +99,7 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.5 }}
           >
-            Computer Science Graduate & Aspiring Software Engineer
+            Computer Science Graduate & Software Engineer
           </motion.p>
           <motion.div
             className="flex justify-center space-x-6"

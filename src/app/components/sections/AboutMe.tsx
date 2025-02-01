@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 //import { Button } from "../ui/Button";
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/app/components/ui/Card";
 import {
   ChevronLeft,
   ChevronRight,
@@ -19,7 +19,7 @@ const funFacts = [
   { text: "Loves solving puzzles", icon: <Code className="w-6 h-6" /> },
   { text: "Built first app at 15", icon: <Coffee className="w-6 h-6" /> },
   {
-    text: "Fluent in 3 programming languages",
+    text: "Fluent in 5 programming languages",
     icon: <Book className="w-6 h-6" />,
   },
   {
