@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TimelineCard from "@/app/components/ui/TimelineCard";
 import ZoomedTimelineItem from "@/app/components/ui/ZoomedTimelineItem";
-//import logo from '@/assets/thesunrisestate_logo.jpg';
 
 const timelineData = [
   {
@@ -14,9 +13,10 @@ const timelineData = [
     location: "San Jose, CA",
     image: "/palate_logo.svg",
     accomplishments: [
-      "Engineered a React Native app with 20+ screens and 15+ integrated packages",
-      "Implemented advanced bitwise algorithms, reducing runtime by 37%",
-      "Orchestrated strategic product launch campaign, targeting 1,000+ potential clients",
+      "Engineered a React Native app with 20+ screens and 15+ integrated packages, including Google Maps API",
+      "Designed and maintained PostgreSQL databases using Supabase, implementing row-level security policies",
+      "Implemented advanced bitwise algorithms to optimize party-restaurant matching, reducing runtime by 37% and enhancing scalability for thousands of concurrent users",
+      "Orchestrated strategic product launch campaign, targeting 1,000+ potential clients and 10+ restaurants",
     ],
   },
   {
@@ -59,8 +59,8 @@ const timelineData = [
     location: "San Jose, CA",
     image: "/sce.webp",
     accomplishments: [
-      "Documented classification and clustering algorithms in Python",
-      "Built a machine learning model using tokenization and BERT embeddings",
+      "Documented classification and clustering algorithms in Python, like Decision Trees, with detailed explanations and performance analysis, creating a reusable foundation for future machine learning projects",
+      "Built a machine learning model using tokenization and BERT embeddings to match job postings with resumes",
     ],
   },
 ];
@@ -78,8 +78,10 @@ const Experience: React.FC = () => {
 
   return (
     <section id="experience" className="w-full py-16 relative bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-12">My Experience</h2>
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12">
+          My Experience
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {timelineData.map((item, index) => (
             <motion.div
