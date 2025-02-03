@@ -3,7 +3,7 @@ import Layout from "./components/Layout";
 import Hero from "@/app/components/sections/Hero";
 import AboutMe from "@/app/components/sections/AboutMe";
 // import Skills from '@/components/sections/Skills';
-// import Projects from '@/components/sections/Projects';
+import Projects from "@/app/components/sections/Projects";
 import Experience from "@/app/components/sections/Experience";
 // import Education from '@/components/sections/Education';
 // import Contact from '@/components/sections/Contact';
@@ -15,8 +15,9 @@ export default function Home() {
         <Hero />
         <AboutMe />
         <Experience />
-        {/* <Skills />
         <Projects />
+        {/* <Skills />
+        
         <Education />
         <Contact /> */}
       </main>

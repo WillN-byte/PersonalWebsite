@@ -11,7 +11,7 @@ const timelineData = [
     company: "PalAte",
     period: "Sep. 2023 – Present",
     location: "San Jose, CA",
-    image: "/palate_logo.svg",
+    image: "./palate_logo.svg",
     accomplishments: [
       "Engineered a React Native app with 20+ screens and 15+ integrated packages, including Google Maps API",
       "Designed and maintained PostgreSQL databases using Supabase, implementing row-level security policies",
@@ -24,7 +24,7 @@ const timelineData = [
     company: "The Sunrise State",
     period: "Oct. 2024 – Dec 2025",
     location: "Remote",
-    image: "/thesunrisestate_logo.svg",
+    image: "./thesunrisestate_logo.svg",
     accomplishments: [
       "Set up scalable, secure cloud infrastructure for content-management system on Microsoft Azure with CI/CD",
       "Implemented automated testing, reducing bug reports by 30%",
@@ -35,7 +35,7 @@ const timelineData = [
     company: "San Jose State University",
     period: "Aug. 2022 — Present",
     location: "San Jose, CA",
-    image: "/960x0.webp",
+    image: "./960x0.webp",
     accomplishments: [
       "Cultivated digital literacy and cybersecurity awareness in 280+ students",
       "Developed comprehensive computer science and information security curriculum",
@@ -46,7 +46,7 @@ const timelineData = [
     company: "IBM",
     period: "Jun. 2022 – Aug. 2022",
     location: "San Jose, CA",
-    image: "/ibm.svg",
+    image: "./ibm.svg",
     accomplishments: [
       "Spearheaded implementation of Agile SDLC methodologies, resulting in a 30% faster product launch cycle",
       "Developed JavaScript application to address local homelessness and unemployment",
@@ -57,7 +57,7 @@ const timelineData = [
     company: "SJSU Software & Computer Engineering Society",
     period: "Aug. 2021 – Feb. 2023",
     location: "San Jose, CA",
-    image: "/sce.webp",
+    image: "./sce.webp",
     accomplishments: [
       "Documented classification and clustering algorithms in Python, like Decision Trees, with detailed explanations and performance analysis, creating a reusable foundation for future machine learning projects",
       "Built a machine learning model using tokenization and BERT embeddings to match job postings with resumes",
